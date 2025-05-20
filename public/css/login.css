@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px; /* Lebar maksimum untuk desktop */
+    padding: 40px; /* Padding untuk desktop */
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    margin: 20px;
+}
+
+.login-box {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 140px; /* Ukuran logo untuk desktop */
+    margin-bottom: 30px;
+    animation: logo-animation 6.5s infinite;
+}
+
+@keyframes logo-animation {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.login-box h2 {
+    margin-bottom: 30px;
+    font-size: 32px; /* Ukuran font untuk desktop */
+    color: #333;
+    font-weight: 600;
+}
+
+.user-box {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.user-box input {
+    width: 100%;
+    padding: 20px 0; /* Padding untuk desktop */
+    font-size: 20px; /* Ukuran font untuk desktop */
+    color: #333;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.user-box input:focus,
+.user-box input:not(:placeholder-shown) {
+    border-color: #1e3c72;
+}
+
+.user-box input:focus ~ label,
+.user-box input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    left: 0;
+    color: #1e3c72;
+    font-size: 18px; /* Ukuran font untuk desktop */
+}
+
+.user-box label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    padding: 10px 0;
+    font-size: 20px; /* Ukuran font untuk desktop */
+    color: #666;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px; /* Padding untuk desktop */
+    color: #fff;
+    font-size: 20px; /* Ukuran font untuk desktop */
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 40px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #2a5298, #1e3c72);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.btn:focus {
+    outline: 2px solid #2a5298;
+    outline-offset: 2px;
+}
+
+.loader {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #fff;
+    border-top: 3px solid #1e3c72;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn.loading .loader {
+    display: inline-block;
+}
+
+.btn.loading span {
+    display: none;
+}
+
+/* Media Queries for responsiveness */
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 420px; /* Lebar maksimum untuk tablet */
+        padding: 30px; /* Padding untuk tablet */
+    }
+
+    .logo {
+        width: 120px; /* Ukuran logo untuk tablet */
+        margin-bottom: 20px;
+    }
+
+    .login-box h2 {
+        font-size: 28px; /* Ukuran font untuk tablet */
+        margin-bottom: 25px;
+    }
+
+    .user-box {
+        margin-bottom: 30px;
+    }
+
+    .user-box input {
+        padding: 18px 0; /* Padding untuk tablet */
+        font-size: 18px; /* Ukuran font untuk tablet */
+    }
+
+    .user-box label {
+        font-size: 18px; /* Ukuran font untuk tablet */
+    }
+
+    .btn {
+        font-size: 18px; /* Ukuran font untuk tablet */
+        padding: 18px 35px; /* Padding untuk tablet */
+        margin-top: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 560px; /* Lebar maksimum untuk mobile */
+        padding: 25px; /* Padding untuk mobile */
+    }
+
+    .logo {
+        width: 100px; /* Ukuran logo untuk mobile */
+        margin-bottom: 15px;
+    }
+
+    .login-box h2 {
+        font-size: 24px; /* Ukuran font untuk mobile */
+        margin-bottom: 20px;
+    }
+
+    .user-box {
+        margin-bottom: 25px;
+    }
+
+    .user-box input {
+        padding: 16px 0; /* Padding untuk mobile */
+        font-size: 16px; /* Ukuran font untuk mobile */
+    }
+
+    .user-box label {
+        font-size: 16px; /* Ukuran font untuk mobile */
+    }
+
+    .btn {
+        font-size: 16px; /* Ukuran font untuk mobile */
+        padding: 16px 30px; /* Padding untuk mobile */
+        margin-top: 30px;
+    }
+}
