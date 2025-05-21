@@ -17,6 +17,7 @@ class Peminjaman extends Model
         'resi_pjmn',
         'member_id',
         'book_id',
+         'jumlah',
         'created_at',
         'updated_at',
         'deleted_at',

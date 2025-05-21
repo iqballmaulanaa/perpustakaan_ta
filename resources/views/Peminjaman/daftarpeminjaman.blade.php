@@ -63,7 +63,7 @@
                                 {{ $gender === 'laki-laki' ? 'Laki-laki' : ($gender === 'perempuan' ? 'Perempuan' : 'Unknown') }}
                             </td>
                             <td>{{ $peminjaman->book->title ?? 'Unknown' }}</td>
-                            <td>{{ $peminjaman->jumlah ?? '1' }}</td>
+                            <td>{{ $peminjaman->jumlah }}</td>
                             <td>{{ $peminjaman->created_at->format('d-m-Y') }}</td>
                             <td>
                                 {{ $peminjaman->return_date ? \Carbon\Carbon::parse($peminjaman->return_date)->format('d-m-Y') : '-' }}

@@ -217,7 +217,7 @@ public function storePeminjaman(Request $request)
 
         // Kembalikan jumlah buku yang tersedia saat peminjaman dihapus
         $bookStock = $peminjaman->book->bookStock;
-        $bookStock->jmlh_tersedia += 1;
+        $bookStock->jmlh_tersedia += $peminjaman->jumlah;
         $bookStock->save();
 
         // Hapus data peminjaman
